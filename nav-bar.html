@@ -1,0 +1,123 @@
+<!-- ============================================================
+  TPCS — NAV BAR (the white menu bar only; the maroon top strip is not included)
+  Scoped under .tpcs-nav. Edit the hrefs to match your section IDs / pages.
+============================================================ -->
+<nav class="tpcs-nav" aria-label="Main">
+  <style>
+    .tpcs-nav{--b:#2fa4e0;--ink:#1f2a37;font-family:inherit;position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 14px rgba(36,52,71,.08)}
+    .tpcs-nav *{box-sizing:border-box}
+    .tpcs-nav__inner{max-width:1120px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:center;min-height:68px}
+    .tpcs-nav__list{display:flex;align-items:center;justify-content:center;gap:10px;list-style:none;margin:0;padding:0}
+    .tpcs-nav__item{position:relative;display:flex;align-items:center}
+    .tpcs-nav__link{display:inline-flex;align-items:center;padding:12px 16px;border-radius:8px;color:var(--ink);text-decoration:none;
+      font-size:.92rem;font-weight:500;letter-spacing:.02em;text-transform:uppercase;transition:background .2s,color .2s}
+    .tpcs-nav__link:hover{color:var(--b)}
+    .tpcs-nav__link.is-active{background:var(--b);color:#fff}
+    .tpcs-nav__item.has-sub > .tpcs-nav__link{padding-right:2px}
+    .tpcs-nav__chev{width:24px;height:36px;margin-right:4px;border:0;background:none;color:var(--ink);cursor:pointer;display:grid;place-items:center;border-radius:8px}
+    .tpcs-nav__chev svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+    .tpcs-nav__item.is-open .tpcs-nav__chev svg{transform:rotate(180deg)}
+    .tpcs-nav__chev:hover{color:var(--b)}
+
+    .tpcs-nav__sub{position:absolute;top:100%;left:0;min-width:230px;margin:0;padding:8px;list-style:none;background:#fff;border:1px solid #e8eef4;border-radius:14px;
+      box-shadow:0 18px 40px rgba(36,52,71,.16);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
+    .tpcs-nav__item.is-open > .tpcs-nav__sub{opacity:1;visibility:visible;transform:none}
+    @media (hover:hover) and (min-width:901px){.tpcs-nav__item.has-sub:hover > .tpcs-nav__sub{opacity:1;visibility:visible;transform:none}.tpcs-nav__item.has-sub:hover .tpcs-nav__chev svg{transform:rotate(180deg)}}
+    .tpcs-nav__sub a{display:block;padding:10px 14px;border-radius:9px;color:var(--ink);text-decoration:none;font-size:.92rem}
+    .tpcs-nav__sub a:hover{background:rgba(47,164,224,.12);color:#16729f}
+
+    .tpcs-nav__backdrop{display:none}
+    .tpcs-nav__toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;margin-left:auto;padding:0;border:0;border-radius:10px;background:none;color:var(--ink);cursor:pointer}
+    .tpcs-nav__toggle:hover{color:var(--b)}
+    .tpcs-nav__toggle .x{display:none}
+    .tpcs-nav.is-open .tpcs-nav__toggle .x{display:inline}
+    .tpcs-nav.is-open .tpcs-nav__toggle .bars{display:none}
+    .tpcs-nav__toggle svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
+    .tpcs-nav a:focus-visible,.tpcs-nav button:focus-visible{outline:3px solid var(--b);outline-offset:2px}
+
+    @media (max-width:900px){
+      .tpcs-nav__inner{flex-wrap:wrap;justify-content:flex-end;padding:8px 16px;min-height:60px}
+      .tpcs-nav__toggle{display:inline-flex}
+      .tpcs-nav__toggle{position:relative;z-index:3}
+      .tpcs-nav__backdrop{display:block;position:fixed;inset:0;z-index:1;background:rgba(20,6,10,.5);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}
+      .tpcs-nav.is-open .tpcs-nav__backdrop{opacity:1;visibility:visible}
+      .tpcs-nav__list{position:fixed;top:0;right:0;bottom:0;z-index:2;width:min(320px,85vw);margin:0;padding:76px 16px 24px;
+        display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:2px;overflow-y:auto;background:#fff;
+        box-shadow:-14px 0 40px rgba(20,6,10,.25);transform:translateX(100%);visibility:hidden;transition:transform .3s ease,visibility .3s}
+      .tpcs-nav.is-open .tpcs-nav__list{transform:none;visibility:visible}
+      .tpcs-nav__item{flex-wrap:wrap;justify-content:space-between}
+      .tpcs-nav__link{flex:1;padding:14px}
+      .tpcs-nav__item.has-sub > .tpcs-nav__link{padding-right:14px}
+      .tpcs-nav__chev{width:48px;height:48px}
+      .tpcs-nav__sub{position:static;display:none;width:100%;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;background:#f6f9fc;margin:0 0 6px}
+      .tpcs-nav__item.is-open > .tpcs-nav__sub{display:block}
+    }
+    @media (prefers-reduced-motion:reduce){.tpcs-nav *{transition:none!important}}
+  </style>
+
+  <div class="tpcs-nav__backdrop"></div>
+  <div class="tpcs-nav__inner">
+    <button class="tpcs-nav__toggle" aria-expanded="false" aria-controls="tpcs-nav-list" aria-label="Toggle menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <ul class="tpcs-nav__list" id="tpcs-nav-list">
+      <li class="tpcs-nav__item"><a class="tpcs-nav__link is-active" href="#" aria-current="page">Home</a></li>
+
+      <li class="tpcs-nav__item has-sub">
+        <a class="tpcs-nav__link" href="#services">Our Services</a>
+        <button class="tpcs-nav__chev" aria-expanded="false" aria-label="Our Services submenu"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
+        <ul class="tpcs-nav__sub">
+          <li><a href="#services">Fumigation</a></li>
+          <li><a href="#services">Termite Control</a></li>
+          <li><a href="#services">corona virus Protection</a></li>
+          <li><a href="#services">Mosquitoes</a></li>
+          <li><a href="#services">Rodent</a></li>
+          <li><a href="#services">Bed Bugs</a></li>
+        </ul>
+      </li>
+
+      <li class="tpcs-nav__item"><a class="tpcs-nav__link" href="#affiliations">Affiliations</a></li>
+      <li class="tpcs-nav__item"><a class="tpcs-nav__link" href="#clients">Clients List</a></li>
+
+      <li class="tpcs-nav__item has-sub">
+        <a class="tpcs-nav__link" href="#mission">Our Mission</a>
+        <button class="tpcs-nav__chev" aria-expanded="false" aria-label="Our Mission submenu"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
+        <ul class="tpcs-nav__sub">
+          <li><a href="#mission">Our Mission</a></li>
+          <li><a href="#motive">Our Motive</a></li>
+          <li><a href="#team">Our Team</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+        </ul>
+      </li>
+
+      <li class="tpcs-nav__item has-sub">
+        <a class="tpcs-nav__link" href="#contact">Contact</a>
+        <button class="tpcs-nav__chev" aria-expanded="false" aria-label="Contact submenu"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></button>
+        <ul class="tpcs-nav__sub">
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+  (function(){
+    var nav=document.currentScript.parentElement,tg=nav.querySelector('.tpcs-nav__toggle'),
+        items=nav.querySelectorAll('.has-sub');
+    function closeAll(except){items.forEach(function(i){if(i!==except){i.classList.remove('is-open');i.querySelector('.tpcs-nav__chev').setAttribute('aria-expanded','false');}});}
+    items.forEach(function(i){
+      var c=i.querySelector('.tpcs-nav__chev');
+      c.addEventListener('click',function(e){e.stopPropagation();var o=!i.classList.contains('is-open');closeAll(i);i.classList.toggle('is-open',o);c.setAttribute('aria-expanded',o);});
+    });
+    function setMenu(o){nav.classList.toggle('is-open',o);tg.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';if(!o)closeAll();}
+    tg.addEventListener('click',function(){setMenu(!nav.classList.contains('is-open'));});
+    nav.querySelector('.tpcs-nav__backdrop').addEventListener('click',function(){setMenu(false);});
+    nav.querySelectorAll('.tpcs-nav__link, .tpcs-nav__sub a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+    window.addEventListener('resize',function(){if(innerWidth>900)setMenu(false);});
+    document.addEventListener('click',function(e){if(!nav.contains(e.target))closeAll();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();setMenu(false);}});
+  })();
+  </script>
+</nav>

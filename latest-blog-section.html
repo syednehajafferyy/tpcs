@@ -1,0 +1,102 @@
+<!-- ============================================================
+  TPCS — LATEST BLOG (sits directly under Our Services)
+  Same content/structure as the original site, cleaner styling.
+  Scoped under .tpcs-blog. Point each "Read More" href at its post URL.
+============================================================ -->
+<section id="blog" class="tpcs-blog" aria-labelledby="tpcs-blog-title">
+  <style>
+    .tpcs-blog{--b:#2fa4e0;--ink:#243447;--muted:#5b6674;font-family:inherit;background:#fff;color:var(--ink);padding:80px 20px 88px}
+    .tpcs-blog *{box-sizing:border-box}
+    .tpcs-blog__inner{max-width:1120px;margin:0 auto}
+    .tpcs-blog__title{margin:0;text-align:center;font-size:clamp(1.4rem,2.4vw,1.8rem);font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .tpcs-blog__title::after{content:"";display:block;width:74px;height:3px;margin:12px auto 0;background:var(--b);border-radius:3px}
+    .tpcs-blog__track{--gap:24px;display:flex;gap:var(--gap);align-items:stretch;list-style:none;margin:44px 0 0;padding:6px 4px 28px;
+      overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+    .tpcs-blog__track::-webkit-scrollbar{display:none}
+    .tpcs-post{flex:0 0 calc((100% - 2*var(--gap))/3);scroll-snap-align:start;display:flex}
+    @media (max-width:900px){.tpcs-post{flex-basis:calc((100% - var(--gap))/2)}.tpcs-blog__track{align-items:flex-start}}
+    @media (max-width:560px){.tpcs-blog{padding:60px 16px 68px}.tpcs-blog__track{--gap:16px}.tpcs-post{flex-basis:88%}}
+
+    .tpcs-post__card{display:flex;flex-direction:column;width:100%;padding:28px 26px 22px;background:#fff;
+      border:1px solid #e8eef4;border-bottom:4px solid var(--b);border-radius:16px;
+      box-shadow:0 8px 24px rgba(36,52,71,.07);transition:transform .25s,box-shadow .25s}
+    .tpcs-post__card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(47,164,224,.18)}
+    .tpcs-post__title{margin:0 0 12px;font-size:1.15rem;line-height:1.35;font-weight:600;color:var(--b)}
+    .tpcs-post__tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 12px;padding:0}
+    .tpcs-post__tags li{font-size:.78rem;padding:4px 10px;border-radius:6px;background:#eef2f5;color:var(--muted)}
+    .tpcs-post__excerpt{margin:0 0 20px;color:var(--ink);font-size:.95rem;line-height:1.6}
+    .tpcs-post__more{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding:10px 18px;
+      background:var(--b);color:#fff;border-radius:8px;font-weight:600;font-size:.9rem;text-decoration:none;transition:background .2s}
+    .tpcs-post__more svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .tpcs-post__more:hover{background:#1d8cc7}
+    .tpcs-post__more:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+    .tpcs-blog__nav{display:flex;justify-content:center;gap:10px}
+    .tpcs-blog__btn{width:44px;height:44px;border-radius:10px;border:2px solid var(--b);background:#fff;color:var(--b);cursor:pointer;display:grid;place-items:center;transition:background .2s,color .2s,opacity .2s}
+    .tpcs-blog__btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+    .tpcs-blog__btn:hover:not(:disabled){background:var(--b);color:#fff}
+    .tpcs-blog__btn:disabled{opacity:.35;cursor:default}
+    .tpcs-blog__btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+    @media (prefers-reduced-motion:reduce){.tpcs-blog__track{scroll-behavior:auto}.tpcs-post__card{transition:none}.tpcs-post__card:hover{transform:none}}
+  </style>
+
+  <div class="tpcs-blog__inner">
+    <h2 id="tpcs-blog-title" class="tpcs-blog__title">Latest Blog</h2>
+    <ul class="tpcs-blog__track" aria-label="Latest blog posts">
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Fumigation-Services-in-Karachi</h3>
+        <p class="tpcs-post__excerpt">Equipment and Tools: Like a good professional…</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Fumigation, Termite Control, Pest Control home</h3>
+        <p class="tpcs-post__excerpt">fumigation, insect removal home, Pest control for house</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Fumigation services in DHA Karachi</h3>
+        <p class="tpcs-post__excerpt">fumigation procedure, fumigation procedure in hospital,</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Corona virus (COVID-19) – NHS</h3>
+        <p class="tpcs-post__excerpt">COVID-19 is a new illness that can affect your lungs…</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Water tank cleaning underground and overhead in Karachi TPCS</h3>
+        <ul class="tpcs-post__tags"><li>water tank cleaning</li></ul><p class="tpcs-post__excerpt">ISO CERTIFIED 9001:2008 COMPANY INTRODUCTION: We are in…</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Termite Solution Drilling &amp; Spray Treatment in Karachi TPCS</h3>
+        <p class="tpcs-post__excerpt">ISO CERTIFIED 9001 : 2008 TOTAL PEST CONTROL SERVICES is…</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Fumigation Services in Karachi</h3>
+        <ul class="tpcs-post__tags"><li>Anti Bed Bugs Treatment</li><li>Anti Mosquitoes Spray</li><li>Fumigation Services in Karachi</li><li>General Fumigation</li><li>Rodent control</li><li>Termite Proofing</li></ul><p class="tpcs-post__excerpt">We are pleased to introduce ourselves as the profession…</p>
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+      <li class="tpcs-post"><article class="tpcs-post__card">
+        <h3 class="tpcs-post__title">Fumigation Services In Karachi</h3>
+        
+        <a class="tpcs-post__more" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg>Read More</a>
+      </article></li>
+    </ul>
+    <div class="tpcs-blog__nav">
+      <button class="tpcs-blog__btn" data-dir="-1" aria-label="Previous posts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+      <button class="tpcs-blog__btn" data-dir="1" aria-label="Next posts"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var s=document.currentScript.parentElement,t=s.querySelector('.tpcs-blog__track'),b=s.querySelectorAll('.tpcs-blog__btn');
+    function step(){return t.querySelector('.tpcs-post').getBoundingClientRect().width+parseFloat(getComputedStyle(t).columnGap||24);}
+    function upd(){b[0].disabled=t.scrollLeft<=4;b[1].disabled=t.scrollLeft>=t.scrollWidth-t.clientWidth-4;}
+    b.forEach(function(x){x.addEventListener('click',function(){t.scrollBy({left:step()*x.dataset.dir});});});
+    t.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  })();
+  </script>
+</section>

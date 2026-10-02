@@ -1,0 +1,194 @@
+<!-- ============================================================
+  TPCS — HERO (drop-in replacement for the existing Hero only)
+  Header, nav and every other section are NOT included.
+  All CSS is scoped under .tpcs-hero.
+
+  BACKGROUND PHOTO: save a fumigation / pest-control photo as
+  hero-fumigation.jpg (min 1920px wide, a technician in protective
+  gear spraying works best) and point --tp-hero-img at it below.
+  Until the file exists, a built-in illustration of a technician fumigating shows instead.
+============================================================ -->
+
+<section class="tpcs-hero" aria-labelledby="tpcs-hero-title">
+  <style>
+    .tpcs-hero{
+      --tp-maroon:#3a0d14;
+      --tp-red:#e53935;
+      --tp-blue:#0f93d9;
+      --tp-ink:#1f2a37;
+      --tp-muted:#5b6674;
+      --tp-hero-img:url("PP.png");   /* <-- your real photo goes here */
+      --tp-hero-fallback:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 800' preserveAspectRatio='xMidYMid slice'%3E%0A%3Cdefs%3E%0A%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232b3a42'/%3E%3Cstop offset='.55' stop-color='%234a5f69'/%3E%3Cstop offset='1' stop-color='%231c262c'/%3E%3C/linearGradient%3E%0A%3ClinearGradient id='win' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23dfeef5' stop-opacity='.55'/%3E%3Cstop offset='1' stop-color='%23dfeef5' stop-opacity='.05'/%3E%3C/linearGradient%3E%0A%3CradialGradient id='mist' cx='.5' cy='.5' r='.5'%3E%3Cstop offset='0' stop-color='%23fff' stop-opacity='.75'/%3E%3Cstop offset='1' stop-color='%23fff' stop-opacity='0'/%3E%3C/radialGradient%3E%0A%3Cfilter id='b'%3E%3CfeGaussianBlur stdDeviation='14'/%3E%3C/filter%3E%0A%3Cfilter id='b2'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%0A%3C/defs%3E%0A%3Crect width='1600' height='800' fill='url(%23bg)'/%3E%0A%3Cg fill='url(%23win)'%3E%3Crect x='760' y='0' width='70' height='620'/%3E%3Crect x='870' y='0' width='70' height='620'/%3E%3Crect x='980' y='0' width='70' height='620'/%3E%3Crect x='1090' y='0' width='70' height='620'/%3E%3C/g%3E%0A%3Cg filter='url(%23b)' fill='%232e5a3d' opacity='.85'%3E%3Cellipse cx='640' cy='640' rx='150' ry='190'/%3E%3Cellipse cx='520' cy='700' rx='120' ry='150'/%3E%3Cellipse cx='740' cy='700' rx='110' ry='130'/%3E%3C/g%3E%0A%3Crect y='700' width='1600' height='100' fill='%23141b20'/%3E%0A%3Cg transform='translate(1060 90)'%3E%0A%3Crect x='150' y='130' width='120' height='230' rx='42' fill='%23d9dfe2'/%3E%3Crect x='168' y='150' width='84' height='16' rx='8' fill='%23b9c2c7'/%3E%0A%3Cpath d='M30 250c0-70 55-120 130-120h30c75 0 120 50 120 120v380H30z' fill='%23eef2f4'/%3E%0A%3Cpath d='M70 270c30 40 70 60 120 60s90-20 120-60' fill='none' stroke='%23c7d0d5' stroke-width='6'/%3E%0A%3Ccircle cx='150' cy='80' r='72' fill='%23f4f7f8'/%3E%0A%3Cellipse cx='122' cy='88' rx='52' ry='38' fill='%239fc4d6' opacity='.55'/%3E%0A%3Crect x='96' y='96' width='60' height='42' rx='20' fill='%233a4046'/%3E%3Ccircle cx='112' cy='118' r='9' fill='%2359636b'/%3E%3Ccircle cx='140' cy='118' r='9' fill='%2359636b'/%3E%0A%3Cpath d='M30 300c-60 40-110 90-170 120' stroke='%23eef2f4' stroke-width='64' stroke-linecap='round' fill='none'/%3E%0A%3Crect x='-300' y='400' width='190' height='12' rx='6' fill='%2327313a' transform='rotate(-8 -300 400)'/%3E%0A%3Cpath d='M-120 430c-60 20-130 20-190 8' stroke='%231d6fa3' stroke-width='6' fill='none'/%3E%0A%3Ccircle cx='-320' cy='432' r='16' fill='%230f93d9'/%3E%0A%3C/g%3E%0A%3Cg filter='url(%23b2)'%3E%0A%3Ccircle cx='760' cy='520' r='70' fill='url(%23mist)'/%3E%3Ccircle cx='680' cy='540' r='95' fill='url(%23mist)'/%3E%3Ccircle cx='590' cy='560' r='120' fill='url(%23mist)'/%3E%3Ccircle cx='500' cy='590' r='80' fill='url(%23mist)' opacity='.6'/%3E%0A%3C/g%3E%0A%3C/svg%3E");  /* built-in illustration, shown until the photo exists */
+      position:relative;font-family:inherit;color:#fff;
+      margin-bottom:96px;                          /* room for the overlapping card */
+      background:
+        linear-gradient(90deg,rgba(40,8,14,.90) 0%,rgba(58,13,20,.62) 48%,rgba(20,6,10,.18) 100%),
+        var(--tp-hero-img) center/cover no-repeat,
+        var(--tp-hero-fallback) center/cover no-repeat,
+        var(--tp-maroon);
+    }
+    .tpcs-hero *{box-sizing:border-box}
+    .tpcs-hero__inner{
+      max-width:1120px;margin:0 auto;
+      padding:104px 20px 168px;                    /* bottom padding sits under the card */
+    }
+    .tpcs-hero__title{
+      margin:0 0 20px;max-width:620px;
+      font-size:clamp(2.3rem,5.4vw,4rem);line-height:1.08;font-weight:800;letter-spacing:-.01em;
+    }
+    .tpcs-hero__text{
+      margin:0 0 34px;max-width:540px;
+      font-size:clamp(1rem,1.5vw,1.125rem);line-height:1.65;color:rgba(255,255,255,.88);
+    }
+    .tpcs-hero__cta{display:flex;flex-wrap:wrap;gap:14px}
+    .tpcs-btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:15px 28px;border-radius:999px;font-weight:700;font-size:1rem;
+      text-decoration:none;border:2px solid transparent;
+      transition:background .2s,border-color .2s,color .2s,transform .2s;
+    }
+    .tpcs-btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .tpcs-btn--primary{background:var(--tp-blue);color:#fff}
+    .tpcs-btn--primary:hover{background:#0b7fbd;transform:translateY(-2px)}
+    .tpcs-btn--ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.75);color:#fff}
+    .tpcs-btn--ghost:hover{background:#fff;color:var(--tp-maroon)}
+    .tpcs-btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+
+    /* floating card - matching reference layout (Image 1) */
+    .tpcs-hero__card{
+      position:absolute;left:50%;bottom:-96px;transform:translateX(-50%);
+      width:min(1040px,calc(100% - 40px));
+      display:grid;grid-template-columns:repeat(3,1fr);
+      background:#fff;color:var(--tp-ink);border-radius:24px;padding:36px 16px;
+      box-shadow:0 24px 60px rgba(30,6,10,.25),0 4px 14px rgba(30,6,10,.08);
+      z-index:10;
+    }
+
+    @media (max-width:860px){
+      .tpcs-hero{margin-bottom:0}
+      .tpcs-hero__inner{padding:72px 20px 120px}
+      .tpcs-hero__card{
+        position:relative;left:auto;bottom:auto;transform:none;
+        grid-template-columns:1fr;margin:-48px auto 0;padding:16px 0;
+        width:calc(100% - 32px);
+      }
+    }
+    @media (max-width:520px){
+      .tpcs-hero__cta{flex-direction:column}
+      .tpcs-btn{justify-content:center;width:100%}
+    }
+    @media (prefers-reduced-motion:reduce){.tpcs-btn{transition:none}.tpcs-btn--primary:hover{transform:none}}
+
+    /* feature card - vertical centered reference layout */
+    .tpcs-feat{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      padding:6px 24px;
+    }
+    .tpcs-feat + .tpcs-feat{border-left:1px solid #e6e9ee}
+    .tpcs-feat__icon{
+      flex:none;
+      width:52px;
+      height:52px;
+      margin-bottom:16px;
+      display:grid;
+      place-items:center;
+      color:var(--tp-blue, #0f93d9);
+    }
+    .tpcs-feat__icon svg{
+      width:44px;
+      height:44px;
+      stroke:currentColor;
+      fill:none;
+      stroke-width:1.8;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .tpcs-feat__title{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      font-weight:700;
+      color:var(--tp-ink);
+      line-height:1.25;
+    }
+    .tpcs-feat__text{
+      margin:0;
+      font-size:.92rem;
+      line-height:1.5;
+      color:var(--tp-muted);
+      max-width:280px;
+    }
+    @media (max-width:860px){
+      .tpcs-feat{padding:20px 24px}
+      .tpcs-feat + .tpcs-feat{border-left:0;border-top:1px solid #e6e9ee}
+    }
+
+    /* ---- mobile / tablet (<= 860px): background adjustment ---- */
+    @media (max-width:860px){
+      .tpcs-hero{
+        background:
+          linear-gradient(180deg,rgba(40,8,14,.05) 0%,rgba(40,8,14,.25) 28%,rgba(40,8,14,.88) 56%,rgba(40,8,14,.96) 100%),
+          var(--tp-hero-img) 70% 0/cover no-repeat,
+          var(--tp-hero-fallback) 80% 0/cover no-repeat,
+          var(--tp-maroon);
+      }
+      .tpcs-hero__inner{padding:72px 20px 96px}
+      .tpcs-hero__title,.tpcs-hero__text{text-shadow:0 2px 12px rgba(0,0,0,.45)}
+    }
+  </style>
+
+  <div class="tpcs-hero__inner">
+    <h1 id="tpcs-hero-title" class="tpcs-hero__title">Total Pest Control Services<br>Fumigation Services in Karachi</h1>
+    <p class="tpcs-hero__text">
+      Termite Treatment, Cockroaches Treatment, Bed Bugs Treatment, Wood Borer,
+      Mosquitoes Treatment and Water Tank Cleaning in Karachi.
+    </p>
+    <div class="tpcs-hero__cta">
+      <a class="tpcs-btn tpcs-btn--primary" href="tel:03332356477">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+        Call 0333-2356477
+      </a>
+      <a class="tpcs-btn tpcs-btn--ghost" href="#contact">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Contact Us
+      </a>
+    </div>
+  </div>
+
+  <div class="tpcs-hero__card">
+    <div class="tpcs-feat">
+      <div class="tpcs-feat__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="9" r="6"/>
+          <path d="m9.5 9 2 2 3.5-3.5"/>
+          <path d="M8.5 14 7 21l5-3 5 3-1.5-7"/>
+        </svg>
+      </div>
+      <h3 class="tpcs-feat__title">ISO 9001:2008</h3>
+      <p class="tpcs-feat__text">Certified company</p>
+    </div>
+    <div class="tpcs-feat">
+      <div class="tpcs-feat__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 9 12 4l9 5"/>
+          <path d="M5 9v9M9.5 9v9M14.5 9v9M19 9v9"/>
+          <path d="M3 21h18M3 18h18"/>
+        </svg>
+      </div>
+      <h3 class="tpcs-feat__title">Govt. Registered</h3>
+      <p class="tpcs-feat__text">Dept. of Plant Protection, Govt. of Pakistan</p>
+    </div>
+    <div class="tpcs-feat">
+      <div class="tpcs-feat__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/>
+          <circle cx="12" cy="10" r="2.5"/>
+        </svg>
+      </div>
+      <h3 class="tpcs-feat__title">Across Karachi</h3>
+      <p class="tpcs-feat__text">Termite, bed bugs, cockroaches, mosquitoes &amp; more</p>
+    </div>
+  </div>
+</section>
