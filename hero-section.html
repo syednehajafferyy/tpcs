@@ -74,10 +74,13 @@
       }
     }
     @media (max-width:520px){
-      .tpcs-hero__inner{padding:56px 20px 80px}
-      .tpcs-hero__title{font-size:clamp(1.5rem,7.2vw,2rem);line-height:1.1}
+      .tpcs-hero__inner{padding:260px 20px 0}
+      .tpcs-hero__title{font-size:clamp(1.75rem,7.4vw,2.125rem);line-height:1.12}
+      .tpcs-hero__title br{display:none}
+      .tpcs-hero__text{margin-bottom:26px}
       .tpcs-hero__cta{flex-direction:column}
       .tpcs-btn{justify-content:center;width:100%}
+      .tpcs-hero__card{margin:24px auto 32px}
     }
     @media (prefers-reduced-motion:reduce){.tpcs-btn{transition:none}.tpcs-btn--primary:hover{transform:none}}
 
@@ -139,10 +142,20 @@
       .tpcs-hero__inner{padding:72px 20px 96px}
       .tpcs-hero__title,.tpcs-hero__text{text-shadow:0 2px 12px rgba(0,0,0,.45)}
     }
+    @media (max-width:520px){
+      .tpcs-hero{
+        background:
+          linear-gradient(180deg,rgba(40,8,14,.08) 0%,rgba(40,8,14,.16) 72%,var(--tp-maroon) 245px,var(--tp-maroon) 100%),
+          var(--tp-hero-img) 78% top/auto 245px no-repeat,
+          var(--tp-hero-fallback) 78% top/auto 245px no-repeat,
+          var(--tp-maroon);
+      }
+      .tpcs-hero__inner{padding:260px 20px 0}
+    }
   </style>
 
   <div class="tpcs-hero__inner">
-    <h1 id="tpcs-hero-title" class="tpcs-hero__title">Total Pest Control Services<br>Fumigation Services in Karachi</h1>
+    <h1 id="tpcs-hero-title" class="tpcs-hero__title">Total Pest Control Services <br>Fumigation Services in Karachi</h1>
     <p class="tpcs-hero__text">
       Termite Treatment, Cockroaches Treatment, Bed Bugs Treatment, Wood Borer,
       Mosquitoes Treatment and Water Tank Cleaning in Karachi.
